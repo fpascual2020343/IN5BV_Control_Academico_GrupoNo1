@@ -17,22 +17,28 @@ package com.grupono1.models.domain;
  */
 public class CarreraTecnica {
     
-    private String codigo_carrera;
+    private int codigo_carrera;
     private String nombre;
 
     public CarreraTecnica() {
     }
 
-    public CarreraTecnica(String codigo_carrera, String nombre) {
+    public CarreraTecnica(int codigo_carrera, String nombre) {
         this.codigo_carrera = codigo_carrera;
         this.nombre = nombre;
     }
 
-    public String getCodigo_carrera() {
+    public CarreraTecnica(int codigo_carrera) {
+        this.codigo_carrera = codigo_carrera;
+    }
+    
+
+    public int getCodigo_carrera() {
         return codigo_carrera;
     }
+    
 
-    public void setCodigo_carrera(String codigo_carrera) {
+    public void setCodigo_carrera(int codigo_carrera) {
         this.codigo_carrera = codigo_carrera;
     }
 
