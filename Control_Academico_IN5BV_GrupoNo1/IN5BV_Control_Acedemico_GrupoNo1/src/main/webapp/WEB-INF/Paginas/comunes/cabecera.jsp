@@ -23,7 +23,7 @@
                         <a class="nav-link " href="${pageContext.request.contextPath}/ServletAlumno?accion=listar"><i class="fas fa-user-graduate"></i> Alumno <i class="fas fa-user-graduate"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/ServletAsignaciondeEstudiantes?accion=listar"><i class="fas fa-graduation-cap"></i> Asignacion Alumno <i class="fas fa-graduation-cap"></i></a>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/ServletAsignaciondeAlumnos?accion=listar"><i class="fas fa-graduation-cap"></i> Asignacion Alumno <i class="fas fa-graduation-cap"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href=""><i class="fas fa-briefcase"></i> Carreras Tecnicas <i class="fas fa-briefcase"></i></a>
