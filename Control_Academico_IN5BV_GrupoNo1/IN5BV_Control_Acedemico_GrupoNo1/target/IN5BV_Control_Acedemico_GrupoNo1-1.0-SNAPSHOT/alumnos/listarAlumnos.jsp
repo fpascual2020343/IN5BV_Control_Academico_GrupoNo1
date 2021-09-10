@@ -33,7 +33,6 @@
                 </div>
             </div>
         </header>
-<<<<<<< HEAD
         <section  >
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
@@ -43,9 +42,6 @@
                 </div>
             </div>
         </section>
-=======
->>>>>>> origin/guideon
-
         <section id="alumnos">
             <div class="container">
                 <div class="row">

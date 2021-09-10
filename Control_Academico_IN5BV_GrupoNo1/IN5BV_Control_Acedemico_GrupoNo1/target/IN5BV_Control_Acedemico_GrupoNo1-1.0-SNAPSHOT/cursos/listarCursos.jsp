@@ -37,11 +37,7 @@
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
                     <div class="col-9">
-<<<<<<< HEAD:Control_Academico_IN5BV_GrupoNo1/IN5BV_Control_Acedemico_GrupoNo1/src/main/webapp/listarCursos.jsp
                         <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar Curso</i></a>
-=======
-                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar Curso </i></a>
->>>>>>> origin/miguel:Control_Academico_IN5BV_GrupoNo1/IN5BV_Control_Acedemico_GrupoNo1/src/main/webapp/cursos/listarCursos.jsp
                     </div>
                 </div>
             </div>

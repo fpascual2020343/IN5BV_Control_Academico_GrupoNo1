@@ -5,7 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +16,7 @@
         <link rel="stylesheet" href="../assets/css/style.css">
         <link rel="stylesheet" href="../assets/css/bootstrap.css">
         <script src="https://kit.fontawesome.com/f90d3bf50d.js"></script>   
-
+        <title>Listado de Carreras Tecnicas</title>
     </head>
     <body id = "contenido">
         <jsp:include page="/WEB-INF/Paginas/comunes/cabecera.jsp"/>
@@ -46,7 +47,16 @@
         <section id="Salon">
             <div class="container">
                 <div class="row" >
-                    <div  class="align-content-center" class="col-2" >
+                    <div  class="align-content-center" class="col-12 col-md-9" >
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Listado de Carreras Tecnicas</h4>
+                            </div>
+                        </div>
+
+
+
                         <table class="table table-striped table-hover"  style="background-color: #5E2129">
                             <thead class="text-light" >
                                 <tr>
@@ -56,14 +66,14 @@
                                 </tr>
                             </thead>
                             <tbody style="background-color: #000000">
-                                <c:forEach var="Salon" items="${listadoCarrera}"  > 
+                                <c:forEach var="carrera" items="${listadoCarreraTecnica}"  > 
                                     <tr class="text-light">
                                         <td>
                                             <i class="fas fa-user"></i> ${carrera.codigo_carrera}</td>
                                         <td>${carrera.nombre}</td>
                                         <td>
-                                        <a style="background-color: #5e2129 " class="btn text-light" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carrera=${carrera.codigo_carrera}"><i class="fas fa-trash"></i></a>
-                                          </td>
+                                            <a style="background-color: #5e2129 " class="btn text-light" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carrera=${carrera.codigo_carrera}"><i class="fas fa-trash"></i></a>
+                                        </td>
                                     </tr>
                                 </c:forEach>
                             </tbody>

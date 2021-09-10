@@ -37,11 +37,7 @@
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
                     <div class="col-9">
-<<<<<<< HEAD:Control_Academico_IN5BV_GrupoNo1/IN5BV_Control_Acedemico_GrupoNo1/target/IN5BV_Control_Acedemico_GrupoNo1-1.0-SNAPSHOT/listarHorario.jsp
                         <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar Horario</i></a>
-=======
-                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar Horario </a>
->>>>>>> origin/miguel:Control_Academico_IN5BV_GrupoNo1/IN5BV_Control_Acedemico_GrupoNo1/src/main/webapp/horarios/listarHorario.jsp
                     </div>
                 </div>
             </div>
@@ -63,16 +59,16 @@
                                 </tr>
                             </thead>
                             <tbody style="background-color: #000000">
-                            <c:forEach  var  = "horario" items = "${listadoHorario}"> 
-                                <tr class="text-light">
-                                    <td>${horario.horario_id}</td>
-                                    <td>${horario.horario_final}</td>
-                                    <td>${horario.horario_inicio}</td>>   
-                                    <td> <a style="background-color: #5e2129 " class="btn text-light " href="${pageContext.request.contextPath}/ServletHorario?accion=eliminar&horario_id=${horario.horario_id}"><i class="fas fa-trash"></i></a>
-                                    <td> <a style="background-color: #5e2129 " class="btn text-light " href="${pageContext.request.contextPath}/ServletHorario?accion=editarr&horario_id=${horario.horario_id}"><i class="fas fa-edit"></i></a>
-                                    </td>
-                                </tr>
-                            </c:forEach>
+                                <c:forEach  var  = "horario" items = "${listadoHorario}"> 
+                                    <tr class="text-light">
+                                        <td>${horario.horario_id}</td>
+                                        <td>${horario.horario_final}</td>
+                                        <td>${horario.horario_inicio}</td>>   
+                                        <td> <a style="background-color: #5e2129 " class="btn text-light " href="${pageContext.request.contextPath}/ServletHorario?accion=editarr&horario_id=${horario.horario_id}"><i class="fas fa-edit"></i></a>
+                                        <td> <a style="background-color: #5e2129 " class="btn text-light " href="${pageContext.request.contextPath}/ServletHorario?accion=eliminar&horario_id=${horario.horario_id}"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>

@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
     
-    private static final String SQL__SELECT = "SELECT codigo_carrera, nombre FROM Carrera_Tecnica";
+    private static final String SQL_SELECT = "SELECT codigo_carrera, nombre FROM Carrera_Tecnica";
     private static final String SQL_DELETE = "DELETE FROM curso WHERE codigo_carrera = ?";
 
     Connection conn = null;
@@ -38,7 +38,7 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
     public List<CarreraTecnica> listarCarrera() {
         try {
             conn = Conexion.getConnection();
-            pstmt = conn.prepareStatement(SQL__SELECT);
+            pstmt = conn.prepareStatement(SQL_SELECT);
             rs = pstmt.executeQuery();
 
             while (rs.next()) {

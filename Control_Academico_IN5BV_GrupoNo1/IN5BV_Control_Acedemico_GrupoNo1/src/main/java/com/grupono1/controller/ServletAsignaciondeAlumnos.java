@@ -63,9 +63,7 @@ public class ServletAsignaciondeAlumnos extends HttpServlet {
     private void EliminarAsignaciondeAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String asignacion_id = request.getParameter("asignacion_id");
-
         AsignacionAlumno asignacionAlumno = new AsignacionAlumno(asignacion_id);
-
         int registrosEliminados = new AsignaciondeAlumnoDaoImpl().eliminar(asignacionAlumno);
         System.out.println("cantidad de registros eliminados: " + registrosEliminados);
         listarAsignaciondeAlumnos(request, response);

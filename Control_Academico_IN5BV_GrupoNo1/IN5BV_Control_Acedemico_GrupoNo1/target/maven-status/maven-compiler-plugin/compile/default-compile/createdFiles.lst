@@ -8,6 +8,7 @@ com\grupono1\models\idao\IAlumnoDao.class
 com\grupono1\controller\ServletInstructor.class
 com\grupono1\controller\ServletAsignaciondeAlumnos.class
 com\grupono1\models\dao\AsignaciondeAlumnoDaoImpl.class
+com\grupono1\models\dao\CarreraTecnicaDaoImpl.class
 com\grupono1\controller\ServletSalon.class
 com\grupono1\models\dao\AlumnoDaoImpl.class
 com\grupono1\models\dao\SalonDaoImpl.class
@@ -22,6 +23,7 @@ com\grupono1\models\domain\Horario.class
 com\grupono1\controller\ServletHorario.class
 com\grupono1\controller\ServletCurso.class
 com\grupono1\models\dao\CursoDaoImpl.class
+com\grupono1\controller\ServletCarreraTecnica.class
 com\grupono1\models\domain\Alumno.class
 com\grupono1\models\domain\Salon.class
 com\grupono1\models\idao\ICursoDao.class

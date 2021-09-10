@@ -38,18 +38,14 @@
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
                     <div class="col-9">
-<<<<<<< HEAD:Control_Academico_IN5BV_GrupoNo1/IN5BV_Control_Acedemico_GrupoNo1/src/main/webapp/asignacionDeAlumno/listarAsignacionAlumno.jsp
                         <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletAsignaciondeAlumnos?accion=agregar&asignacionAlumno=${asignacion_Alumno.asignacionAlumno}" ><i class="fas fa-user-plus"></i> Agregar Asignacion Alumno</i></a>
-=======
-                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar Asignacion</i></a>
->>>>>>> origin/pedro:Control_Academico_IN5BV_GrupoNo1/IN5BV_Control_Acedemico_GrupoNo1/src/main/webapp/Asignacion_de_Alumno/ListarAsignaciondeAlumno.jsp
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <section id="asignacionAlumno" class="mt-5 mb-5">
+        <section id="salon" class="mt-5 mb-5">
             <div class="container">
                 <div class="row" >
                     <div  class="align-content-center" class="col-12 col-md-9" >
@@ -76,7 +72,7 @@
 
                             <tbody style="background-color: #000000">
                                 <c:forEach var="asignacionAlumno" items="${listadoAsignacionAlumnos}">
-                                    
+
                                     <tr class="text-light">
                                         <td><i class="fas fa-user"></i>${asignacionAlumno.asignacion_id}</td>
                                         <td>${asignacionAlumno.carne_alumno}</td>
@@ -102,7 +98,6 @@
         </section>
 
         <jsp:include page="/WEB-INF/Paginas/comunes/Pie-Pagina.jsp"/>
-        
         <script src="../assets/js/jquery-3.6.0.js"></script>
         <script src="../assets/js/bootstrap.bundle.js"></script>
 

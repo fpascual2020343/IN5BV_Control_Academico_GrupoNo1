@@ -26,7 +26,7 @@
                         <a class="nav-link" href="${pageContext.request.contextPath}/ServletAsignaciondeAlumnos?accion=listar"><i class="fas fa-graduation-cap"></i> Asignacion Alumno <i class="fas fa-graduation-cap"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href=""><i class="fas fa-briefcase"></i> Carreras Tecnicas <i class="fas fa-briefcase"></i></a>
+                        <a class="nav-link " href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=listar"><i class="fas fa-briefcase"></i> Carreras Tecnicas <i class="fas fa-briefcase"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="${pageContext.request.contextPath}/ServletCurso?accion=listar"><i class="fas fa-file-signature"></i> Curso <i class="fas fa-file-signature"></i></a>

@@ -51,7 +51,7 @@ public class ServletCarreraTecnica extends HttpServlet {
 
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoCarreraTecnica", listarCarreraTecnica);
-        response.sendRedirect("listar/listarCarrera.jsp");
+        response.sendRedirect("carrera/listarCarrera.jsp");
 
     }
 
@@ -60,7 +60,6 @@ public class ServletCarreraTecnica extends HttpServlet {
         int codigo_carrera = Integer.parseInt(request.getParameter("codigo_carrera"));
         CarreraTecnica carrera = new CarreraTecnica(codigo_carrera);
         int registrosEliminados = new CarreraTecnicaDaoImpl().eliminar(carrera);
-
         System.out.println();
         listarCarreraTecnica(request, response);
     }
