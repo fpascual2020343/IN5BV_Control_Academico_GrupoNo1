@@ -57,10 +57,10 @@ public class ServletCarreraTecnica extends HttpServlet {
 
     private void eliminarCarrera(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        int codigo_carrera = Integer.parseInt(request.getParameter("codigo_carrera"));
+        String codigo_carrera = request.getParameter("codigo_carrera");
         CarreraTecnica carrera = new CarreraTecnica(codigo_carrera);
         int registrosEliminados = new CarreraTecnicaDaoImpl().eliminar(carrera);
-        System.out.println();
+        System.out.println("Cantidad de registros Elminados: "+ registrosEliminados);
         listarCarreraTecnica(request, response);
     }
 

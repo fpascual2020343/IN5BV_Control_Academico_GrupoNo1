@@ -45,19 +45,10 @@
         </section>
 
 
-        <section id="salon" class="mt-5 mb-5">
+        <section id="Salon">
             <div class="container">
                 <div class="row" >
-                    <div  class="align-content-center" class="col-12 col-md-9" >
-
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Listado de Asignaciones</h4>
-                            </div>
-                        </div>
-
-
-
+                    <div  class="align-content-center" class="col-2" >
                         <table class="table table-striped table-hover"  style="background-color: #5E2129">
                             <thead class="text-light" >
                                 <tr>

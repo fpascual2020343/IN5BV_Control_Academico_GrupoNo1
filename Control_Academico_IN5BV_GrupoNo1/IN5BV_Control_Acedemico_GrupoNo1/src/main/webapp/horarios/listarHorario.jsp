@@ -47,7 +47,7 @@
         <section id="Salon">
             <div class="container">
                 <div class="row" >
-                    <div  class="align-content-center" class="col-2" >
+                    <div class="align-content-center" class="col-2">
                         <table class="table table-striped table-hover"  style="background-color: #5E2129">
                             <thead class="text-light" >
                                 <tr>
@@ -60,14 +60,14 @@
                             </thead>
                             <tbody style="background-color: #000000">
                                 <c:forEach  var  = "horario" items = "${listadoHorario}"> 
-                                    <tr class="text-light">
+                                   <tr class="text-light">
                                         <td>${horario.horario_id}</td>
                                         <td>${horario.horario_final}</td>
-                                        <td>${horario.horario_inicio}</td>>   
+                                        <td>${horario.horario_inicio}</td>   
                                         <td> <a style="background-color: #5e2129 " class="btn text-light " href="${pageContext.request.contextPath}/ServletHorario?accion=editarr&horario_id=${horario.horario_id}"><i class="fas fa-edit"></i></a>
                                         <td> <a style="background-color: #5e2129 " class="btn text-light " href="${pageContext.request.contextPath}/ServletHorario?accion=eliminar&horario_id=${horario.horario_id}"><i class="fas fa-trash"></i></a>
                                         </td>
-                                    </tr>
+                                     </tr>
                                 </c:forEach>
                             </tbody>
                         </table>

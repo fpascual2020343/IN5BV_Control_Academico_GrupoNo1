@@ -26,7 +26,7 @@ import java.util.List;
 public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
     
     private static final String SQL_SELECT = "SELECT codigo_carrera, nombre FROM Carrera_Tecnica";
-    private static final String SQL_DELETE = "DELETE FROM curso WHERE codigo_carrera = ?";
+    private static final String SQL_DELETE = "DELETE FROM Carrera_Tecnica WHERE codigo_carrera = ?";
 
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -42,7 +42,7 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                int codigo_carrera = rs.getInt("codigo_carrera");
+                String codigo_carrera = rs.getString("codigo_carrera");
                 String nombre = rs.getString("nombre");
             
 
@@ -83,7 +83,7 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_DELETE);
-            pstmt.setInt(1, carrera.getCodigo_carrera());
+            pstmt.setString(1, carreraTecnica.getCodigo_carrera());
             System.out.println(pstmt.toString());
             rows = pstmt.executeUpdate();
         } catch (SQLException e) {
