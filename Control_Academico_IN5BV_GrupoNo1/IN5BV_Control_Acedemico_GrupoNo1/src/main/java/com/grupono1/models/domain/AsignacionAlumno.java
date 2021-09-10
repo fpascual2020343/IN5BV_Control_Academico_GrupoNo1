@@ -15,28 +15,28 @@ import java.sql.Timestamp;
  * Carne: 2020343
  * Jornada: Vespertina
  */
-public class Asignacion_Alumno {
+public class AsignacionAlumno {
     
     private String asignacion_id;
     private String carne_alumno;
     private int id_curso;
     private Timestamp fecha_asignacion;
 
-    public Asignacion_Alumno() {
+    public AsignacionAlumno() {
     }
 
-    public Asignacion_Alumno(String asignacion_id) {
+    public AsignacionAlumno(String asignacion_id) {
         this.asignacion_id = asignacion_id;
     }
 
-    public Asignacion_Alumno(String asignacion_id, String carne_alumno, int id_curso, Timestamp fecha_asignacion) {
+    public AsignacionAlumno(String asignacion_id, String carne_alumno, int id_curso, Timestamp fecha_asignacion) {
         this.asignacion_id = asignacion_id;
         this.carne_alumno = carne_alumno;
         this.id_curso = id_curso;
         this.fecha_asignacion = fecha_asignacion;
     }
 
-    public Asignacion_Alumno(String carne_alumno, int id_curso, Timestamp fecha_asignacion) {
+    public AsignacionAlumno(String carne_alumno, int id_curso, Timestamp fecha_asignacion) {
         this.carne_alumno = carne_alumno;
         this.id_curso = id_curso;
         this.fecha_asignacion = fecha_asignacion;

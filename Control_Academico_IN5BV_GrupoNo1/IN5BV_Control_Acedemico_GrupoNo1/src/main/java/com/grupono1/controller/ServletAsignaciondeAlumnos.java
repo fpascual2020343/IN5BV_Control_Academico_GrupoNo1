@@ -1,7 +1,7 @@
 package com.grupono1.controller;
 
 import com.grupono1.models.dao.AsignaciondeAlumnoDaoImpl;
-import com.grupono1.models.domain.Asignacion_Alumno;
+import com.grupono1.models.domain.AsignacionAlumno;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,14 +21,14 @@ import javax.servlet.http.HttpSession;
  * @time 11:24:21 AM
  * @date 3/09/2021 Codigo Tecnico: IN5BV Carne: 2020343 Jornada: Vespertina
  */
-@WebServlet("/ServletAsignaciondeEstudiantes")
-public class ServletAsignaciondeEstudiantes extends HttpServlet {
+@WebServlet("/ServletAsignaciondeAlumnos")
+public class ServletAsignaciondeAlumnos extends HttpServlet {
 
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
-    Asignacion_Alumno asignacion_Alumno = null;
-    List<Asignacion_Alumno> ListaAsignacion_Alumno = new ArrayList<>();
+    AsignacionAlumno asignacion_Alumno = null;
+    List<AsignacionAlumno> ListaAsignacion_Alumno = new ArrayList<>();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,21 +52,19 @@ public class ServletAsignaciondeEstudiantes extends HttpServlet {
     }
 
     private void listarAsignaciondeAlumnos(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        List<Asignacion_Alumno> listaAsignacion_Alumnos = new AsignaciondeAlumnoDaoImpl().listar();
+        List<AsignacionAlumno> listaAsignacionAlumnos = new AsignaciondeAlumnoDaoImpl().listar();
 
         HttpSession sesion = request.getSession();
-        sesion.setAttribute("listadoAsignacion_Alumnos", listaAsignacion_Alumnos);
-        response.sendRedirect("Asignacion_de_Alumno/ListarAsignaciondeAlumno.jsp");
+        sesion.setAttribute("listadoAsignacionAlumnos", listaAsignacionAlumnos);
+        response.sendRedirect("asignacionDeAlumno/listarAsignacionAlumno.jsp");
 
     }
 
     private void EliminarAsignaciondeAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        String idAsignacion = request.getParameter("asignacion_id");
-
-        Asignacion_Alumno asignacion_Alumno = new Asignacion_Alumno(idAsignacion);
-
-        int registrosEliminados = new AsignaciondeAlumnoDaoImpl().eliminar(asignacion_Alumno);
+        String asignacion_id = request.getParameter("asignacion_id");
+        AsignacionAlumno asignacionAlumno = new AsignacionAlumno(asignacion_id);
+        int registrosEliminados = new AsignaciondeAlumnoDaoImpl().eliminar(asignacionAlumno);
         System.out.println("cantidad de registros eliminados: " + registrosEliminados);
         listarAsignaciondeAlumnos(request, response);
 
