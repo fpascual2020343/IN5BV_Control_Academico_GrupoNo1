@@ -27,7 +27,11 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
     
     private static final String SQL_SELECT = "SELECT codigo_carrera, nombre FROM Carrera_Tecnica";
     private static final String SQL_DELETE = "DELETE FROM Carrera_Tecnica WHERE codigo_carrera = ?";
-
+    private static final String SQL_INSERT = "INSERT INTO Carrera_Tecnica(codigo_carrera, nombre) VALUES(?,?)";
+    private static final String SQL_SELECT_BY_ID = "SELECT codigo_carrera, nombre FROM Carrera_Tecnica WHERE codigo_carrera = ?";
+    private static final String SQL_UPDATE = "UPDATE Carrera_Tecnica SET nombre = ? WHERE codigo_id = ?";
+    
+    
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
@@ -64,17 +68,80 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
 
     @Override
     public CarreraTecnica encontrar(CarreraTecnica carreraTecnica) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_SELECT_BY_ID);
+            pstmt.setString(1, carrera.getCodigo_carrera());
+            System.out.println(pstmt.toString());
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                String codigo_carrera = rs.getString("codigo_carrera");
+                String nombre = rs.getString("nombre");
+                carrera.setCodigo_carrera(codigo_carrera);
+                carrera.setNombre(nombre);
+                
+                listaCarreraTenica.add(carrera);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return carrera;
     }
 
     @Override
     public int insertar(CarreraTecnica carreraTecnica) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        int rows = 0;
+        
+        try{
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_INSERT);
+            pstmt.setString(1, carreraTecnica.getCodigo_carrera());
+            pstmt.setString(2, carreraTecnica.getNombre());
+            
+            System.out.println(pstmt.toString());
+            
+            rows=pstmt.executeUpdate();
+            
+        }catch(SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return rows;
     }
 
     @Override
     public int actualizar(CarreraTecnica carreraTecnica) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rows = 0;
+        
+        try{
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_UPDATE);
+            pstmt.setString(1, carreraTecnica.getCodigo_carrera());
+            pstmt.setString(2, carreraTecnica.getNombre());
+            System.out.println(pstmt.toString());
+            rows=pstmt.executeUpdate();
+            
+        }catch(SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return rows;
     }
 
     @Override

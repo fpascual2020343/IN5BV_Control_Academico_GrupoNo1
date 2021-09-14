@@ -32,16 +32,47 @@
             </div>
         </header>
 
-        <section  >
+        <section>
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
                     <div class="col-9">
-                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=listar&codigo_carrera=${carrera.codigo_estudiante}" ><i class="fas fa-user-plus"></i> Agregar Carrera</i></a>
+                        <a  class="btn text-light" data-toggle="modal" data-target="#text-light-modal" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=listar&codigo_carrera=${carrera.codigo_carrera}" ><i class="fas fa-user-plus"></i> Agregar Carrera</i></a>
                     </div>
                 </div>
             </div>
         </section>
 
+
+        <!-- Modal -->
+        <div class="modal fade" id="agregar-carrera-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content bg-primary text-white">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar Carrera</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <form method="POST" a   ction="${pageContext.request.contextPath}/ServletCarreraTecnica">
+                        <div class="modal-body">
+
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Ingrese una carrera</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control">
+                            </div>
+
+                            <input type="hidden" name="accion" value="agregar">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
         <section id="CarreraTecnica">
             <div class="container">
@@ -62,7 +93,7 @@
                                             <i class="fas fa-user"></i> ${CarreraTecnica.codigo_carrera}</td>
                                         <td>${CarreraTecnica.nombre}</td>
                                         <td>
-                                            <a style="background-color: #5e2129 " class="btn text-light" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carreraa=${CarreraTecnica.codigo_carrera}"><i class="fas fa-trash"></i></a>
+                                            <a style="background-color: #5e2129 " class="btn text-light" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carrera=${CarreraTecnica.codigo_carrera}"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 </c:forEach>
