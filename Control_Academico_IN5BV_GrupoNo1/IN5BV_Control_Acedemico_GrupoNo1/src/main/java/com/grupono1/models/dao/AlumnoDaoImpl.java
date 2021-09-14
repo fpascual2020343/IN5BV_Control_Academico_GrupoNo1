@@ -22,6 +22,10 @@ import java.sql.SQLException;
 public class AlumnoDaoImpl implements IAlumnoDao{
     private static final String SQL_SELECT ="SELECT carne, apellidos, nombres, email FROM Alumno";
     private static final String SQL_DELETE ="DELETE FROM Alumno WHERE carne=?";
+    private static final String SQL_INSERT ="INSERT INTO Alumno(carne, apellidos, nombres, email) VALUES(?,?,?,?)";
+    private static final String SQL_SELCT_BY_ID ="SELECT carne, apellidos, nombres, email WHERE carne=?";
+    private static final String SQL_UPDATE ="UPDATE Alumno SET apellidos=?, nombres=?, email=? WHERE carne =?";
+    
     
     Connection conn=null;
     PreparedStatement pstmt = null;
@@ -60,7 +64,42 @@ public class AlumnoDaoImpl implements IAlumnoDao{
 
     @Override
     public Alumno encontrar(Alumno alumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            conn=Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_SELCT_BY_ID);//PRIMER CAMBIO
+            //Segundo cambio
+            pstmt.setString(1, alumno.getCarne());
+            System.out.println(pstmt.toString());
+            
+            rs=pstmt.executeQuery();
+            
+            
+            while(rs.next()){
+                String nombres=rs.getString("nombres");
+                String apellidos=rs.getString("apellidos");
+                String email=rs.getString("emails");
+                
+                //Tercer Cambio
+                alumno.setApellidos(apellidos);
+                alumno.setNombres(nombres);
+                alumno.setEmail(email);
+                
+                //cuarto cambio
+                //...Se queda vacío
+                
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        }catch(Exception e){
+            e.printStackTrace(System.out);
+        }finally{
+            Conexion.close(rs);
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        
+        //quinto cambio
+        return alumno;
     }
 
 
@@ -84,11 +123,54 @@ public class AlumnoDaoImpl implements IAlumnoDao{
 
     @Override
     public int actualizar(Alumno alumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rows=0;
+        try{
+            conn= Conexion.getConnection();
+            pstmt= conn.prepareStatement(SQL_UPDATE);// Primer cambio
+            pstmt.setString(1,alumno.getApellidos());
+            pstmt.setString(2,alumno.getNombres());
+            pstmt.setString(3,alumno.getEmail());
+            pstmt.setString(4,alumno.getCarne());
+            
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+            
+        }catch(SQLException e){
+            e.printStackTrace(System.out);
+        }catch(Exception e){
+           e.printStackTrace(System.out); 
+        }finally{
+            Conexion.close(pstmt);
+            Conexion.close(pstmt);
+            
+        }
+        return rows;
     }
 
     @Override
     public int insertar(Alumno alumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rows=0;
+        try{
+            conn= Conexion.getConnection();
+            pstmt= conn.prepareStatement(SQL_INSERT);
+            pstmt.setString(1,alumno.getCarne());
+            pstmt.setString(2,alumno.getApellidos());
+            pstmt.setString(3,alumno.getNombres());
+            pstmt.setString(4,alumno.getEmail());
+            
+            
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+            
+        }catch(SQLException e){
+            e.printStackTrace(System.out);
+        }catch(Exception e){
+           e.printStackTrace(System.out); 
+        }finally{
+            Conexion.close(pstmt);
+            Conexion.close(pstmt);
+            
+        }
+        return rows;
     }
 }

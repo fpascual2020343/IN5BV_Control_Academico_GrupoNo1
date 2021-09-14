@@ -38,7 +38,7 @@
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
                     <div class="col-9">
-                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar Instructor</i></a>
+                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar </i></a>
                     </div>
                 </div>
             </div>

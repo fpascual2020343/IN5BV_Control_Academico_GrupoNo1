@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.ServletException;
 import java.util.List;
 import com.grupono1.models.dao.AlumnoDaoImpl;
 import com.grupono1.models.domain.Alumno;
