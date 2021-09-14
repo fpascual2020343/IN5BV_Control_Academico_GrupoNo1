@@ -64,7 +64,8 @@ public class AlumnoDaoImpl implements IAlumnoDao{
 
     @Override
     public Alumno encontrar(Alumno alumno) {
-        try {
+        return null;
+        /*try {
             conn=Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_SELCT_BY_ID);//PRIMER CAMBIO
             //Segundo cambio
@@ -99,7 +100,7 @@ public class AlumnoDaoImpl implements IAlumnoDao{
         }
         
         //quinto cambio
-        return alumno;
+        return alumno;*/
     }
 
 

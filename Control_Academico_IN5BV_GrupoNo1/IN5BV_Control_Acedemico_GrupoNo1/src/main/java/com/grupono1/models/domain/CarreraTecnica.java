@@ -28,6 +28,10 @@ public class CarreraTecnica {
         this.nombre = nombre;
     }
 
+    public CarreraTecnica(String codigo_carrera) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getCodigo_carrera() {
         return codigo_carrera;
     }

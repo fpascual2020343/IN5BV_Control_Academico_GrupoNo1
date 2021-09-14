@@ -2,6 +2,7 @@ package com.grupono1.controller;
 
 import com.grupono1.models.dao.AsignaciondeAlumnoDaoImpl;
 import com.grupono1.models.domain.AsignacionAlumno;
+import com.grupono1.models.domain.Asignacion_Alumno;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -52,7 +53,7 @@ public class ServletAsignaciondeAlumnos extends HttpServlet {
     }
 
     private void listarAsignaciondeAlumnos(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        List<AsignacionAlumno> listaAsignacionAlumnos = new AsignaciondeAlumnoDaoImpl().listar();
+        List<Asignacion_Alumno> listaAsignacionAlumnos = new AsignaciondeAlumnoDaoImpl().listar();
 
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoAsignacionAlumnos", listaAsignacionAlumnos);
@@ -63,8 +64,8 @@ public class ServletAsignaciondeAlumnos extends HttpServlet {
     private void EliminarAsignaciondeAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String asignacion_id = request.getParameter("asignacion_id");
-        AsignacionAlumno asignacionAlumno = new AsignacionAlumno(asignacion_id);
-        int registrosEliminados = new AsignaciondeAlumnoDaoImpl().eliminar(asignacionAlumno);
+        Asignacion_Alumno asignacion_Alumno = new Asignacion_Alumno(asignacion_id);
+        int registrosEliminados = new AsignaciondeAlumnoDaoImpl().eliminar(asignacion_Alumno);
         System.out.println("cantidad de registros eliminados: " + registrosEliminados);
         listarAsignaciondeAlumnos(request, response);
 
