@@ -2,6 +2,8 @@ com\grupono1\controller\ServletAlumno.class
 com\grupono1\models\idao\ISalonDao.class
 com\grupo1\models\dao\InstructorDaolmpl.class
 com\grupono1\models\idao\ICarreraTecnicaDao.class
+com\grupono1\models\dao\LoginDao.class
+com\grupono1\models\domain\Usuario.class
 com\grupono1\models\idao\IHorarioDao.class
 com\grupono1\models\domain\CarreraTecnica.class
 com\grupono1\models\idao\IAlumnoDao.class

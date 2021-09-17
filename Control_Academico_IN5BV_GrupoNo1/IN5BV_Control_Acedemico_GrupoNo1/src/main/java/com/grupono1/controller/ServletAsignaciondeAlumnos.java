@@ -1,12 +1,11 @@
 package com.grupono1.controller;
 
 import com.grupono1.models.dao.AsignaciondeAlumnoDaoImpl;
+import com.grupono1.models.domain.Alumno;
 import com.grupono1.models.domain.AsignacionAlumno;
+import com.grupono1.models.domain.Curso;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
+import java.sql.Timestamp;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,11 +23,24 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/ServletAsignaciondeAlumnos")
 public class ServletAsignaciondeAlumnos extends HttpServlet {
 
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
-    AsignacionAlumno asignacion_Alumno = null;
-    List<AsignacionAlumno> ListaAsignacion_Alumno = new ArrayList<>();
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        System.out.println("\ndoPost");
+        String accion = request.getParameter("accion");
+        System.out.println("Accion: " + accion);
+        if (accion != null) {
+            switch (accion) {
+                case "insertar":
+                    insertarAsignacion(request, response);
+                    break;
+                case "actualizar":
+                    actualizarAsignacion(request, response);
+                    break;
+            }
+        }
+
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,7 +53,7 @@ public class ServletAsignaciondeAlumnos extends HttpServlet {
                     listarAsignaciondeAlumnos(request, response);
                     break;
                 case "editar":
-                    //..
+                    editarAsignacion(request, response);
                     break;
                 case "eliminar":
                     EliminarAsignaciondeAlumno(request, response);
@@ -50,8 +62,8 @@ public class ServletAsignaciondeAlumnos extends HttpServlet {
 
         }
     }
-
-    private void listarAsignaciondeAlumnos(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    
+        private void listarAsignaciondeAlumnos(HttpServletRequest request, HttpServletResponse response) throws IOException {
         List<AsignacionAlumno> listaAsignacionAlumnos = new AsignaciondeAlumnoDaoImpl().listar();
 
         HttpSession sesion = request.getSession();
@@ -60,6 +72,68 @@ public class ServletAsignaciondeAlumnos extends HttpServlet {
 
     }
 
+    private void listarAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        List<Alumno> listaAlumno = new AsignaciondeAlumnoDaoImpl().listarAlumno();
+
+        HttpSession sesion = request.getSession();
+            sesion.setAttribute("listadoAlumno", listaAlumno);
+    }
+
+    private void listarCurso(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        List<Curso> curso = new AsignaciondeAlumnoDaoImpl().listarCurso();
+
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("listadoCurso", curso);
+    }
+    
+
+    private void insertarAsignacion(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        System.out.println("\nInsertarAsignacion");
+        AsignacionAlumno asignacionAlumno = new AsignacionAlumno();
+
+        asignacionAlumno.setAsignacion_id(request.getParameter("asignacion_id"));
+        asignacionAlumno.setCarne_alumno(request.getParameter("carne_alumno"));
+        asignacionAlumno.setId_curso(Integer.parseInt(request.getParameter("id_curso")));
+        asignacionAlumno.setFecha_asignacion(Timestamp.valueOf(request.getParameter("fecha_asignacion")));
+
+        System.out.println(asignacionAlumno);
+
+        //insertar el nuevo objeto en la base de datos
+        int registrosIngresados = new AsignaciondeAlumnoDaoImpl().insertar(asignacionAlumno);
+        System.out.println("Registros insertados" + registrosIngresados);
+        listarAsignaciondeAlumnos(request, response);
+
+    }
+
+    private void actualizarAsignacion(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        
+        String asignacion = request.getParameter("asignacion_id");
+        
+        String carne = request.getParameter("carne_alumno");
+        int curso = Integer.parseInt(request.getParameter("id_curso"));
+        Timestamp fechaAsignacion = Timestamp.valueOf(request.getParameter("fecha_asignacion"));
+        
+        AsignacionAlumno asignacionAlumno = new AsignacionAlumno(asignacion, carne, curso, fechaAsignacion);
+        System.out.println(asignacionAlumno);
+        
+        int registroActualizados = new AsignaciondeAlumnoDaoImpl().actualizar(asignacionAlumno);
+        listarAsignaciondeAlumnos(request, response);
+            
+    }
+    
+    private void editarAsignacion(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String asignacion = request.getParameter("asignacion_id");
+
+        AsignacionAlumno asignacionAlumno = new AsignaciondeAlumnoDaoImpl().encontrar(new AsignacionAlumno(asignacion));
+
+        System.out.println(asignacionAlumno);
+
+        request.setAttribute("asignacion", asignacionAlumno);
+        request.getRequestDispatcher("asignacionDeAlumno/editar-asignacion.jsp").forward(request, response);
+
+    }
+    
     private void EliminarAsignaciondeAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String asignacion_id = request.getParameter("asignacion_id");

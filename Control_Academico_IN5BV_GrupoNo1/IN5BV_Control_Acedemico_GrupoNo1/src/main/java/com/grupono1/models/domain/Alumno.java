@@ -78,7 +78,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alummno{" + "carne=" + carne + ", apellidos=" + apellidos + ", nombres=" + nombres + ", email=" + email + '}';
+        return carne + " | " + apellidos + " " + nombres;
     }
 
 }

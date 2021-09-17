@@ -17,7 +17,7 @@
             <div >
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/inicio.jsp">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="${pageContext.request.contextPath}/ServletAlumno?accion=listar"><i class="fas fa-user-graduate"></i> Alumno <i class="fas fa-user-graduate"></i></a>
@@ -39,6 +39,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.request.contextPath}/ServletSalon?accion=listar"><i class="fab fa-delicious"></i> Salon <i class="fab fa-delicious"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/login.jsp"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
                     </li>
                 </ul>
             </div>
