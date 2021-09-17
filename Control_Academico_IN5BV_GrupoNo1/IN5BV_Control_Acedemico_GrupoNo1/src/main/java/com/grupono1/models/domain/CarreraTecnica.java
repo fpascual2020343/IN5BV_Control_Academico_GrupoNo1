@@ -23,9 +23,6 @@ public class CarreraTecnica {
     public CarreraTecnica() {
     }
 
-    public CarreraTecnica(String codigo_carrera) {
-        this.codigo_carrera = codigo_carrera;
-    }
 
     public CarreraTecnica(String codigo_carrera, String nombre) {
         this.codigo_carrera = codigo_carrera;
@@ -33,9 +30,16 @@ public class CarreraTecnica {
     }
 
     public CarreraTecnica(String codigo_carrera) {
+<<<<<<< HEAD
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+=======
+        this.codigo_carrera = codigo_carrera;
+    }  
+    
+    
+>>>>>>> pedro
     public String getCodigo_carrera() {
         return codigo_carrera;
     }
@@ -43,8 +47,6 @@ public class CarreraTecnica {
     public void setCodigo_carrera(String codigo_carrera) {
         this.codigo_carrera = codigo_carrera;
     }
-
-    
 
     public String getNombre() {
         return nombre;
