@@ -35,7 +35,7 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
     List<CarreraTecnica> listaCarreraTenica = new ArrayList<>();
 
     @Override
-    public List<CarreraTecnica> listarCarrera() {
+    public List<CarreraTecnica> listar() {
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_SELECT);
@@ -94,5 +94,6 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
         }
         return rows;
     }
+
 
 }

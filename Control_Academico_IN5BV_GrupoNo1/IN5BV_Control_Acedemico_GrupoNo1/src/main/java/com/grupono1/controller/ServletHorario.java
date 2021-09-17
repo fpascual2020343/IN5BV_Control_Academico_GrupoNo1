@@ -60,7 +60,7 @@ public class ServletHorario  extends HttpServlet{
         
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoHorario", listaHorario);
-        response.sendRedirect("horarios/listarHorario.jsp");
+        response.sendRedirect("listarHorario.jsp");
     }
 
     private void eliminarHorario(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface ICarreraTecnicaDao {
     
-    public List<CarreraTecnica> listarCarrera();
+    public List<CarreraTecnica> listar();
     public CarreraTecnica encontrar(CarreraTecnica carreraTecnica);
     public int insertar(CarreraTecnica carreraTecnica);
     public int actualizar(CarreraTecnica carreraTecnica);
