@@ -38,13 +38,9 @@
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
                     <div class="col-9">
-<<<<<<< HEAD
                                     <!-- Button trigger modal -->
         <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <i class="fas fa-user-plus"></i> Agregar </i>
-=======
-                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar Instructor</i></a>
->>>>>>> 67f90a5b9164864547d96352aeedafbe5b4c4c78
+            <i class="fas fa-user-plus">Agregar </i>
                     </div>
                 </div>
             </div>

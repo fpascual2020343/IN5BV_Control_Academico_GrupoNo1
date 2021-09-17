@@ -23,29 +23,15 @@ public class CarreraTecnica {
     public CarreraTecnica() {
     }
 
-<<<<<<< HEAD
-=======
     public CarreraTecnica(String codigo_carrera) {
         this.codigo_carrera = codigo_carrera;
     }
->>>>>>> sergio
 
     public CarreraTecnica(String codigo_carrera, String nombre) {
         this.codigo_carrera = codigo_carrera;
         this.nombre = nombre;
     }
 
-    public CarreraTecnica(String codigo_carrera) {
-<<<<<<< HEAD
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-=======
-        this.codigo_carrera = codigo_carrera;
-    }  
-    
-    
->>>>>>> pedro
     public String getCodigo_carrera() {
         return codigo_carrera;
     }

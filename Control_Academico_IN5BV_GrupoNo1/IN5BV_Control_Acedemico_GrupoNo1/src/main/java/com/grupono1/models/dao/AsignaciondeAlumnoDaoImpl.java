@@ -6,21 +6,10 @@
 package com.grupono1.models.dao;
 
 import com.grupono1.db.Conexion;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import com.grupono1.models.domain.Alumno;
 import com.grupono1.models.domain.AsignacionAlumno;
 import com.grupono1.models.domain.Curso;
-=======
-import com.grupono1.models.domain.Asignacion_Alumno;
->>>>>>> guideon2
-=======
-import com.grupono1.models.domain.AsignacionAlumno;
->>>>>>> marck
-=======
-import com.grupono1.models.domain.AsignacionAlumno;
->>>>>>> sergio
 import com.grupono1.models.idao.IAsignacionAlumnoDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -42,9 +31,7 @@ public class AsignaciondeAlumnoDaoImpl implements IAsignacionAlumnoDao {
     private static final String SQL_SELECT_Alumno = "SELECT carne, apellidos, nombres, email FROM Alumno";
     private static final String SQL_SELECT_Curso = "SELECT curso_id, ciclo, cupo_maximo, cupo_minimo, descripcion, id_horario,id_salon, id_codigo_carrera, id_instructor  FROM Curso";
     private static final String SQL_DELETE = "delete from Asignacion_Alumno where asignacion_id = ?";
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     private static final String SQL_INSERT = "INSERT INTO Asignacion_Alumno (asignacion_id, carne_alumno, id_curso, fecha_asignacion) VALUES (?, ?, ?, ?)";
     private static final String SQL_SELECT_STRING_BY_ID = "SELECT asignacion_id, carne_alumno, id_curso,fecha_asignacion FROM Asignacion_Alumno WHERE asignacion_id = ?";
     private static final String SQL_UPDATE = " UPDATE Asignacion_Alumno SET carne_alumno = ?, id_curso = ?, fecha_asignacion = ? WHERE asignacion_id = ?";
@@ -58,29 +45,6 @@ public class AsignaciondeAlumnoDaoImpl implements IAsignacionAlumnoDao {
     List<Alumno> listaAlumno = new ArrayList<>();
     Curso curso = null;
     List<Curso> listaCurso = new ArrayList<>();
-=======
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
-    Asignacion_Alumno asignacion_Alumno = null;
-    List<Asignacion_Alumno> ListaAsignacion_Alumno = new ArrayList<>();
->>>>>>> guideon2
-=======
-    
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
-    AsignacionAlumno asignacion_Alumno = null;
-    List<AsignacionAlumno> ListaAsignacion_Alumno = new ArrayList<>();
->>>>>>> marck
-=======
-    
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
-    AsignacionAlumno asignacion_Alumno = null;
-    List<AsignacionAlumno> ListaAsignacion_Alumno = new ArrayList<>();
->>>>>>> sergio
 
     @Override
     public List<AsignacionAlumno> listar() {
@@ -112,9 +76,6 @@ public class AsignaciondeAlumnoDaoImpl implements IAsignacionAlumnoDao {
     }
 
     @Override
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     public List<Alumno> listarAlumno() {
         try {
             conn = Conexion.getConnection();
@@ -184,24 +145,23 @@ public class AsignaciondeAlumnoDaoImpl implements IAsignacionAlumnoDao {
             pstmt = conn.prepareStatement(SQL_SELECT_STRING_BY_ID);
             pstmt.setString(1, asignacion_Alumno.getAsignacion_id());
             pstmt.toString();
-            
+
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-            
+
                 String carne = rs.getString("carne_alumno");
                 int curso = rs.getInt("id_curso");
                 Timestamp fechaHora = rs.getTimestamp("fecha_asignacion");
-                
-                
+
                 asignacion_Alumno.setCarne_alumno(carne);
                 asignacion_Alumno.setId_curso(curso);
                 asignacion_Alumno.setFecha_asignacion(fechaHora);
-                
+
                 ListaAsignacion_Alumno.add(asignacion_Alumno);
-                
+
             }
-            
+
         } catch (SQLException e) {
             e.printStackTrace(System.out);
 
@@ -212,7 +172,7 @@ public class AsignaciondeAlumnoDaoImpl implements IAsignacionAlumnoDao {
             Conexion.close(pstmt);
             Conexion.close(conn);
         }
-        
+
         return asignacion_Alumno;
     }
 
@@ -247,12 +207,12 @@ public class AsignaciondeAlumnoDaoImpl implements IAsignacionAlumnoDao {
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_UPDATE);
-            
+
             pstmt.setString(1, asignacion_Alumno.getCarne_alumno());
             pstmt.setInt(2, asignacion_Alumno.getId_curso());
             pstmt.setTimestamp(3, asignacion_Alumno.getFecha_asignacion());
             pstmt.setString(4, asignacion_Alumno.getAsignacion_id());
-            
+
             System.out.println(pstmt.toString());
             rows = pstmt.executeUpdate();
 
@@ -266,26 +226,6 @@ public class AsignaciondeAlumnoDaoImpl implements IAsignacionAlumnoDao {
 
         }
         return rows;
-=======
-    public Asignacion_Alumno encontrar(Asignacion_Alumno asignacion_Alumno) {
-=======
-    public AsignacionAlumno encontrar(AsignacionAlumno asignacion_Alumno) {
->>>>>>> marck
-=======
-    public AsignacionAlumno encontrar(AsignacionAlumno asignacion_Alumno) {
->>>>>>> sergio
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int insertar(AsignacionAlumno asignacion_Alumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int actualizar(AsignacionAlumno asignacion_Alumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
->>>>>>> guideon2
     }
 
     @Override

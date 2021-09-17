@@ -32,26 +32,17 @@
             </div>
         </header>
 
-<<<<<<< HEAD
         <section>
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
                     <div class="col-9">
                         <a  class="btn text-light" data-toggle="modal" data-target="#text-light-modal" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=listar&codigo_carrera=${carrera.codigo_carrera}" ><i class="fas fa-user-plus"></i> Agregar Carrera</i></a>
-=======
-        <section  >
-            <div class="container" >
-                <div class="row-cols-1" style="background-color: #5E2129">
-                    <div class="col-9">
-                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=listar&codigo_carrera=${carrera.codigo_estudiante}" ><i class="fas fa-user-plus"></i> Agregar Carrera</i></a>
->>>>>>> sergio
                     </div>
                 </div>
             </div>
         </section>
 
 
-<<<<<<< HEAD
         <!-- Modal -->
         <div class="modal fade" id="agregar-carrera-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -83,8 +74,6 @@
             </div>
         </div>
 
-=======
->>>>>>> sergio
         <section id="CarreraTecnica">
             <div class="container">
                 <div class="row" >
@@ -104,11 +93,7 @@
                                             <i class="fas fa-user"></i> ${CarreraTecnica.codigo_carrera}</td>
                                         <td>${CarreraTecnica.nombre}</td>
                                         <td>
-<<<<<<< HEAD
                                             <a style="background-color: #5e2129 " class="btn text-light" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carrera=${CarreraTecnica.codigo_carrera}"><i class="fas fa-trash"></i></a>
-=======
-                                            <a style="background-color: #5e2129 " class="btn text-light" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carreraa=${CarreraTecnica.codigo_carrera}"><i class="fas fa-trash"></i></a>
->>>>>>> sergio
                                         </td>
                                     </tr>
                                 </c:forEach>

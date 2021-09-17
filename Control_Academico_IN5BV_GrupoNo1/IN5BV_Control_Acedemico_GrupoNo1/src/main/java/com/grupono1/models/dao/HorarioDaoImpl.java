@@ -29,6 +29,11 @@ public class HorarioDaoImpl implements IHorarioDao{
       
     private static final String SQL_SELECT = "SELECT horario_id, horario_final, horario_inicio FROM Horario";
     private static final String SQL_DELETE = "DELETE FROM Horario WHERE horario_id =?";
+    private static final String SQL_INSERT = "INSERT INTO Horario (horario_final, horario_inicio) VALUES (?,?)";
+    private static final String SQL_SELECT_BY_ID = "SELECT horario_id, horario_final, horario_inicio FROM Horario WHERE horario_id=?";
+     private static final String SQL_UPDATE = "UPDATE Horario SET horario_final = ?, horario_inicio =?  WHERE horario_id =?";
+   
+    
     Connection conn = null ; 
     PreparedStatement pstmt = null;
     ResultSet rs = null;
@@ -70,20 +75,86 @@ public class HorarioDaoImpl implements IHorarioDao{
         return listaHorario;
     }
 
+    
     @Override
     public Horario encontrar(Horario horario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         try {
+             conn = Conexion.getConnection();
+             pstmt = conn.prepareStatement(SQL_SELECT_BY_ID);
+
+             pstmt.setInt(1, horario.getHorario_id());
+             System.out.println(pstmt.toString());
+             rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+
+                Time horario_final = rs.getTime("horario_final");
+                Time horario_inicio = rs.getTime("horario_inicio");
+                
+                horario.setHorario_final(horario_final);
+                horario.setHorario_inicio(horario_inicio);
+                             
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return horario;
     }
 
     @Override
     public int insertar(Horario horario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     int rows = 0;
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_INSERT);
+            pstmt.setTime(1,horario.getHorario_final());
+            pstmt.setTime(2,horario.getHorario_inicio());    
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return rows;    
+    
+    
     }
 
     @Override
     public int actualizar(Horario horario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         int rows = 0;
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_UPDATE);
+            pstmt.setTime(1,horario.getHorario_final());
+            pstmt.setTime(2,horario.getHorario_inicio()); 
+            pstmt.setInt(3,horario.getHorario_id()); 
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return rows;    
     }
+    
+    
+    
+    
 
     @Override
     public int eliminar(Horario horario) {
