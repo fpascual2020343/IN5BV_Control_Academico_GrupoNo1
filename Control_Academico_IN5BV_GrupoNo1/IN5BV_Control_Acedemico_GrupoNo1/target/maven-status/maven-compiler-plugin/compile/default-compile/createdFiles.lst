@@ -1,6 +1,5 @@
 com\grupono1\controller\ServletAlumno.class
 com\grupono1\models\idao\ISalonDao.class
-com\grupo1\models\dao\InstructorDaolmpl.class
 com\grupono1\models\idao\ICarreraTecnicaDao.class
 com\grupono1\models\dao\LoginDao.class
 com\grupono1\models\domain\Usuario.class
@@ -25,7 +24,15 @@ com\grupono1\models\domain\Horario.class
 com\grupono1\controller\ServletHorario.class
 com\grupono1\controller\ServletCurso.class
 com\grupono1\models\dao\CursoDaoImpl.class
+<<<<<<< HEAD
 com\grupono1\controller\ServletCarreraTecnica.class
+=======
+<<<<<<< HEAD
+com\grupono1\models\dao\InstructorDaolmpl.class
+=======
+com\grupono1\controller\ServletCarreraTecnica.class
+>>>>>>> 67f90a5b9164864547d96352aeedafbe5b4c4c78
+>>>>>>> sergio
 com\grupono1\models\domain\Alumno.class
 com\grupono1\models\domain\Salon.class
 com\grupono1\models\idao\ICursoDao.class

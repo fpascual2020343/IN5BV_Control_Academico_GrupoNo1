@@ -8,6 +8,7 @@ package com.grupono1.models.dao;
 import com.grupono1.db.Conexion;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.grupono1.models.domain.Alumno;
 import com.grupono1.models.domain.AsignacionAlumno;
 import com.grupono1.models.domain.Curso;
@@ -17,6 +18,9 @@ import com.grupono1.models.domain.Asignacion_Alumno;
 =======
 import com.grupono1.models.domain.AsignacionAlumno;
 >>>>>>> marck
+=======
+import com.grupono1.models.domain.AsignacionAlumno;
+>>>>>>> sergio
 import com.grupono1.models.idao.IAsignacionAlumnoDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -38,6 +42,7 @@ public class AsignaciondeAlumnoDaoImpl implements IAsignacionAlumnoDao {
     private static final String SQL_SELECT_Alumno = "SELECT carne, apellidos, nombres, email FROM Alumno";
     private static final String SQL_SELECT_Curso = "SELECT curso_id, ciclo, cupo_maximo, cupo_minimo, descripcion, id_horario,id_salon, id_codigo_carrera, id_instructor  FROM Curso";
     private static final String SQL_DELETE = "delete from Asignacion_Alumno where asignacion_id = ?";
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     private static final String SQL_INSERT = "INSERT INTO Asignacion_Alumno (asignacion_id, carne_alumno, id_curso, fecha_asignacion) VALUES (?, ?, ?, ?)";
@@ -68,6 +73,14 @@ public class AsignaciondeAlumnoDaoImpl implements IAsignacionAlumnoDao {
     AsignacionAlumno asignacion_Alumno = null;
     List<AsignacionAlumno> ListaAsignacion_Alumno = new ArrayList<>();
 >>>>>>> marck
+=======
+    
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    AsignacionAlumno asignacion_Alumno = null;
+    List<AsignacionAlumno> ListaAsignacion_Alumno = new ArrayList<>();
+>>>>>>> sergio
 
     @Override
     public List<AsignacionAlumno> listar() {
@@ -99,6 +112,7 @@ public class AsignaciondeAlumnoDaoImpl implements IAsignacionAlumnoDao {
     }
 
     @Override
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public List<Alumno> listarAlumno() {
@@ -257,6 +271,9 @@ public class AsignaciondeAlumnoDaoImpl implements IAsignacionAlumnoDao {
 =======
     public AsignacionAlumno encontrar(AsignacionAlumno asignacion_Alumno) {
 >>>>>>> marck
+=======
+    public AsignacionAlumno encontrar(AsignacionAlumno asignacion_Alumno) {
+>>>>>>> sergio
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

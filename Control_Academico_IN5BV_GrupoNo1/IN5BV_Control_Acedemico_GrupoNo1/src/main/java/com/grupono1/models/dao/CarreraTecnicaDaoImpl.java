@@ -27,11 +27,15 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
     
     private static final String SQL_SELECT = "SELECT codigo_carrera, nombre FROM Carrera_Tecnica";
     private static final String SQL_DELETE = "DELETE FROM Carrera_Tecnica WHERE codigo_carrera = ?";
+<<<<<<< HEAD
     private static final String SQL_INSERT = "INSERT INTO Carrera_Tecnica(codigo_carrera, nombre) VALUES(?,?)";
     private static final String SQL_SELECT_BY_ID = "SELECT codigo_carrera, nombre FROM Carrera_Tecnica WHERE codigo_carrera = ?";
     private static final String SQL_UPDATE = "UPDATE Carrera_Tecnica SET nombre = ? WHERE codigo_id = ?";
     
     
+=======
+
+>>>>>>> sergio
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
@@ -40,10 +44,14 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
 
     @Override
 <<<<<<< HEAD
+<<<<<<< HEAD
     public List<CarreraTecnica> listar() {
 =======
     public List<CarreraTecnica> listarCarrera() {
 >>>>>>> marck
+=======
+    public List<CarreraTecnica> listarCarrera() {
+>>>>>>> sergio
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_SELECT);
@@ -72,6 +80,7 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
 
     @Override
     public CarreraTecnica encontrar(CarreraTecnica carreraTecnica) {
+<<<<<<< HEAD
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_SELECT_BY_ID);
@@ -97,10 +106,14 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
             Conexion.close(conn);
         }
         return carrera;
+=======
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+>>>>>>> sergio
     }
 
     @Override
     public int insertar(CarreraTecnica carreraTecnica) {
+<<<<<<< HEAD
         
         int rows = 0;
         
@@ -123,10 +136,14 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
             Conexion.close(conn);
         }
         return rows;
+=======
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+>>>>>>> sergio
     }
 
     @Override
     public int actualizar(CarreraTecnica carreraTecnica) {
+<<<<<<< HEAD
         int rows = 0;
         
         try{
@@ -146,6 +163,9 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
             Conexion.close(conn);
         }
         return rows;
+=======
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+>>>>>>> sergio
     }
 
     @Override
@@ -167,7 +187,10 @@ public class CarreraTecnicaDaoImpl implements ICarreraTecnicaDao {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> marck
+=======
+>>>>>>> sergio
 }

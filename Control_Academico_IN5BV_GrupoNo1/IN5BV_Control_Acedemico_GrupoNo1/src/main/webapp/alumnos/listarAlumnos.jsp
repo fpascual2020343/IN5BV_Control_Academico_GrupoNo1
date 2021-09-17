@@ -34,6 +34,7 @@
         </header>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         <section id="acciones" class="py-4 mb-4">
             <div class="container">
                 <div class="row">
@@ -96,11 +97,17 @@
 
 =======
 >>>>>>> marck
+=======
+>>>>>>> sergio
         <section  >
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
                     <div class="col-9">
+<<<<<<< HEAD
                         <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletAlumno?accion=agregar&carne=${alumno.carne}" ><i class="fas fa-user-plus"></i> Agregar Salon</a>
+=======
+                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar Alumno</i></a>
+>>>>>>> sergio
                     </div>
                 </div>
             </div>
@@ -124,6 +131,7 @@
                                 <c:forEach var="alumno" items="${listadoAlumno}">
                                     <tr class="text-light">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <td>
                                             <i class="fas fa-user"> </i> ${alumno.carne}</td>
                                         <td>${alumno.apellidos}${alumno.nombres}</td>
@@ -145,6 +153,12 @@
                                         <td>${alumno.apellidos}${alumno.nombres}</td>
                                         <td>${alumno.email}</td>
                                         <td>
+=======
+                                        <td>${alumno.carne}</td>
+                                        <td>${alumno.apellidos}${alumno.nombres}</td>
+                                        <td>${alumno.email}</td>
+                                        <td>
+>>>>>>> sergio
                                             <a style="background-color: #5e2129 " class="btn text-light " href="${pageContext.request.contextPath}/ServletSalon?accion=editar&salon_id=${Salon.salon_id}"><i class="far fa-edit"></i></a>
                                             <a style="background-color: #5e2129 " class="btn text-light" href="${pageContext.request.contextPath}/ServletAlumno?accion=eliminar&carne=${alumno.carne}"><i class="fas fa-trash"></i></a>
 >>>>>>> marck

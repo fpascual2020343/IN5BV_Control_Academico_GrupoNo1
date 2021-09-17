@@ -38,7 +38,13 @@
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
                     <div class="col-9">
-                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar </i></a>
+<<<<<<< HEAD
+                                    <!-- Button trigger modal -->
+        <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fas fa-user-plus"></i> Agregar </i>
+=======
+                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar Instructor</i></a>
+>>>>>>> 67f90a5b9164864547d96352aeedafbe5b4c4c78
                     </div>
                 </div>
             </div>
@@ -68,7 +74,7 @@
                                         <td>${instructor.direccion}</td>
                                         <td>${instructor.telefono}</td>
                                         <td> 
-                                            <a style="background-color: #5e2129 " class="btn text-light" href="${pageContext.request.contextPath}/ServletInstructor?accion=ediar&instructor_id=${instructor.instructor_id}"><i class="far fa-edit"></i></i></a>
+                                            <a style="background-color: #5e2129 " class="btn text-light" href="${pageContext.request.contextPath}/ServletInstructor?accion=editar&instructor_id=${instructor.instructor_id}"><i class="far fa-edit"></i></i></a>
                                             <a style="background-color: #5e2129 " class="btn text-light"  href="${pageContext.request.contextPath}/ServletInstructor?accion=eliminar&instructor_id=${instructor.instructor_id}"><i class="fas fa-trash"></i></a>
 
                                         </td>
@@ -82,8 +88,54 @@
                 </div>
 
             </div>
+            
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white" >
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar estudiante</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="POST" action="${pageContext.request.contextPath}/ServletInstructor">
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="apellidos" class="form-label" >Ingres sus apellidos</label>
+                                <input type="text" id="apellidos" name="apellidos" class="form-control"> 
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nombres" class="form-label">Ingrese sus nombres</label>
+                                <input type="text" id="nombres" name="nombres"class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="direccion" class="form-label">Ingrese su  Direccion</label>
+                                <input type="text" id="direccion" name="direccion"class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Ingrese su Telefono</label>
+                                <input type="telefono" id="telefono" name="telefono"class="form-control">
+                            </div>
+               
+                            
+                            <input type="hidden" name="accion" value="insertar"> 
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>           
 
         </section>
+                    
+                 
 
         <jsp:include page="/WEB-INF/Paginas/comunes/Pie-Pagina.jsp"/>
         <script src="../assets/js/jquery-3.6.0.js"></script>

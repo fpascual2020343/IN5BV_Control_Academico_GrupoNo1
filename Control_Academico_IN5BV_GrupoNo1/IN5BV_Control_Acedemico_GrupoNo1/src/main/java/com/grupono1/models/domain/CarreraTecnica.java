@@ -23,6 +23,12 @@ public class CarreraTecnica {
     public CarreraTecnica() {
     }
 
+<<<<<<< HEAD
+=======
+    public CarreraTecnica(String codigo_carrera) {
+        this.codigo_carrera = codigo_carrera;
+    }
+>>>>>>> sergio
 
     public CarreraTecnica(String codigo_carrera, String nombre) {
         this.codigo_carrera = codigo_carrera;
@@ -47,6 +53,8 @@ public class CarreraTecnica {
     public void setCodigo_carrera(String codigo_carrera) {
         this.codigo_carrera = codigo_carrera;
     }
+
+    
 
     public String getNombre() {
         return nombre;

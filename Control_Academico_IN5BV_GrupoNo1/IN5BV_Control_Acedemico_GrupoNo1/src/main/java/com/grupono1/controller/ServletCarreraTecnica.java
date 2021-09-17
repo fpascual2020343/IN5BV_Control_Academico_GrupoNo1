@@ -9,7 +9,10 @@ import com.grupono1.models.dao.CarreraTecnicaDaoImpl;
 import com.grupono1.models.domain.CarreraTecnica;
 import java.io.IOException;
 import java.util.List;
+<<<<<<< HEAD
 import javax.servlet.ServletException;
+=======
+>>>>>>> sergio
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +27,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet("/ServletCarreraTecnica")
 public class ServletCarreraTecnica extends HttpServlet {
+<<<<<<< HEAD
     
      @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -49,6 +53,11 @@ public class ServletCarreraTecnica extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+=======
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+>>>>>>> sergio
         String accion = request.getParameter("accion");
 
         if (accion != null) {
@@ -58,7 +67,11 @@ public class ServletCarreraTecnica extends HttpServlet {
                     listarCarreraTecnica(request, response);
                     break;
                 case "editar":
+<<<<<<< HEAD
                     editarCarreraTecnica(request, response);
+=======
+                    //
+>>>>>>> sergio
                     break;
                 case "eliminar":
                     eliminarCarrera(request, response);
@@ -67,6 +80,7 @@ public class ServletCarreraTecnica extends HttpServlet {
 
         }
     }
+<<<<<<< HEAD
     
     private void insertarCarrera(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
@@ -107,6 +121,12 @@ public class ServletCarreraTecnica extends HttpServlet {
 =======
         List<CarreraTecnica> listarCarreraTecnica = new CarreraTecnicaDaoImpl().listarCarrera();
 >>>>>>> marck
+=======
+
+    private void listarCarreraTecnica(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        List<CarreraTecnica> listarCarreraTecnica = new CarreraTecnicaDaoImpl().listarCarrera();
+>>>>>>> sergio
 
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoCarreraTecnica", listarCarreraTecnica);
@@ -119,7 +139,11 @@ public class ServletCarreraTecnica extends HttpServlet {
         String codigo_carrera = request.getParameter("codigo_carrera");
         CarreraTecnica carrera = new CarreraTecnica(codigo_carrera);
         int registrosEliminados = new CarreraTecnicaDaoImpl().eliminar(carrera);
+<<<<<<< HEAD
         System.out.println();
+=======
+        System.out.println("Cantidad de registros Elminados: "+ registrosEliminados);
+>>>>>>> sergio
         listarCarreraTecnica(request, response);
     }
 
