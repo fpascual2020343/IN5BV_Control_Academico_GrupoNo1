@@ -37,12 +37,49 @@
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
                     <div class="col-9">
-                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar Horario </a>
+                        <a  class="btn text-light" data-bs-target="#agregar-horario-modal" data-bs-toggle="modal"  >
+                            <i class="fas fa-user-plus"></i> Agregar Horario </a>
                     </div>
                 </div>
             </div>
         </section>
+        
+           <div class="modal fade" id="agregar-horario-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header" style="background-color: #5E2129" >
+                          <h5 class="modal-title  text-light" id="exampleModalLabel"  >Agregar Horario</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <form  method="POST" action="${pageContext.request.contextPath}/ServletHorario">
+                          <div class="modal-body">
 
+                              <div class="mb-3">                                   
+                                  <label>El formato de horas es el siguiente: hh:mm:ss</label><br>
+                                  <label>Ejemplo: 12:00:00</label> 
+                                  </br>
+                                  <label for="horario_final" class="form-label" > Hora de Final </label>
+                                  <input type="text" id="horario_final" name="horario_final"  calss="form-control" >
+                              </div>
+
+                              <div class="mb-3">  
+                                  <label for="horario_inicio" class="form-label" > Hora de Inicio </label>
+                                  <input type="text" id="horario_inicio" name="horario_inicio"  calss="form-control" >
+                              </div>
+ 
+                              <input type="hidden" name="accion" value="insertar">
+
+                          </div>
+                          <div class="modal-footer" style="background-color: #5E2129">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                              <button type="submit" class="btn btn-success">Guardar</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+                    
+   
 
         <section id="Salon">
             <div class="container">
@@ -65,7 +102,7 @@
                                     <td>${horario.horario_final}</td>
                                     <td>${horario.horario_inicio}</td>>   
                                     <td> <a style="background-color: #5e2129 " class="btn text-light " href="${pageContext.request.contextPath}/ServletHorario?accion=eliminar&horario_id=${horario.horario_id}"><i class="fas fa-trash"></i></a>
-                                    <td> <a style="background-color: #5e2129 " class="btn text-light " href="${pageContext.request.contextPath}/ServletHorario?accion=editarr&horario_id=${horario.horario_id}"><i class="fas fa-edit"></i></a>
+                                    <td> <a style="background-color: #5e2129 " class="btn text-light " href="${pageContext.request.contextPath}/ServletHorario?accion=editar&horario_id=${horario.horario_id}"><i class="fas fa-edit"></i></a>
                                     </td>
                                 </tr>
                             </c:forEach>

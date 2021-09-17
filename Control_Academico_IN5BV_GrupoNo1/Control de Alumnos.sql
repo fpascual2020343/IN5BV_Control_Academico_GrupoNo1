@@ -119,6 +119,8 @@ SELECT asignacion_id, carne_alumno, id_curso,fecha_asignacion FROM Asignacion_Al
 
 INSERT INTO Asignacion_Alumno(asignacion_id, carne_alumno, id_curso, fecha_asignacion) VALUE("B5C0E","2020343", 1, "2021-09-03 15:20:15");
 
+Select * from Curso;
+select * from Salon;
 Select * from Horario;
 Select * from Instructor;
-Select * from Curso;
+

@@ -37,11 +37,84 @@
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
                     <div class="col-9">
-                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar Curso </i></a>
+                        <a  class="btn text-light"  data-bs-target="#agregar-curso-modal" data-bs-toggle="modal">
+                            <i class="fas fa-user-plus"></i> Agregar Curso 
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
+
+        <div class="modal fade" id="agregar-curso-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #5E2129" >
+                        <h5 class="modal-title text-light" id="exampleModalLabel"  >Agregar Curso</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form  method="POST" action="${pageContext.request.contextPath}/ServletCurso">
+                        <div class="modal-body">
+
+                            <div class="mb-3">  
+                                <label for="ciclo" class="form-label" > Ciclo</label>
+                                <input type="text" id="ciclo" name="ciclo"  calss="form-control" >
+                            </div>
+
+                            <div class="mb-3">  
+                                <label for="cupo_maximo" class="form-label" > Cupo Maximo </label>
+                                <input type="text" id="cupo_maximo" name="cupo_maximo"  calss="form-control" >
+                            </div>
+
+                            <div class="mb-3">  
+                                <label for="cupo_minimo" class="form-label" > Cupo Minimo </label>
+                                <input type="text" id="cupo_minimo" name="cupo_minimo"  calss="form-control" >
+                            </div>
+
+                            <div class="mb-3">  
+                                <label for="descripcion" class="form-label" > Descripcion </label>
+                                <input type="text" id="descripcion" name="descripcion"  calss="form-control" >
+                            </div>
+
+                            <div class="mb-3">  
+                                <label for="id_horario" class="form-label" > Horario </label>
+                                <input type="text" id="id_horario" name="id_horario"  calss="form-control" step="any" >
+                                <label> Debe ingresar solamente el id del horario</labe></br>
+                                <a href="${pageContext.request.contextPath}/ServletHorario?accion=listar" >verificar id del horario</a>
+                            </div>
+
+                            <div class="mb-3">  
+                                <label for="id_salon" class="form-label" > Salon </label>
+                                <input type="text" id="salon" name="id_salon"  calss="form-control" step="any" >
+                                <label> Debe ingresar solamente el id del salon</labe></br>
+                                <a href="${pageContext.request.contextPath}/ServletSalon?accion=listar" >verificar id del salon</a>
+                            </div>
+                            <div class="mb-3">  
+                                <label for="id_codigo_carrera" class="form-label" > Carrera </label>
+                                <input type="text" id="carrera" name="id_codigo_carrera"  calss="form-control" step="any" >
+                                <label> Debe ingresar solamente el id de la carrera</labe></br>
+                                <a href="${pageContext.request.contextPath}/ServletSalon?accion=listar" >Verificar id de la carrera técnica</a>
+                            </div>
+
+                            <div class="mb-3">  
+                                <label for="id_instructor" class="form-label" > Instructor </label>
+                                <input type="text" id="instructor" name="id_instructor"  calss="form-control" step="any" >
+                                <label> Debe ingresar solamente el id del instructor</labe></br>
+                                <a href="${pageContext.request.contextPath}/ServletInstructor?accion=listar" >Verificar id del instructor</a>
+                            </div>
+
+                            <input type="hidden" name="accion" value="insertar">
+
+                        </div>
+                        <div class="modal-footer" style="background-color: #5E2129" >
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
 
         <section id="Cursos">
             <div class="container">
@@ -66,7 +139,7 @@
                                 <c:forEach  var  = "curso" items = "${listadoCurso}"> 
                                     <tr class="text-light">
                                         <td> <i class="fas fa-user"></i> ${curso.curso_id}</td>
-                                        <td>${curso.ciclo} ${curso.id_salon}</td>
+                                        <td>${curso.ciclo} ||  ${curso.id_salon}</td>
                                         <td>${curso.descripcion}</td>
                                         <td>${curso.cupo_maximo}</td>
                                         <td>${curso.cupo_minimo}</td>
