@@ -62,7 +62,11 @@
                                             <i class="fas fa-user"></i> ${CarreraTecnica.codigo_carrera}</td>
                                         <td>${CarreraTecnica.nombre}</td>
                                         <td>
+<<<<<<< HEAD
                                             <a style="background-color: #5e2129 " class="btn text-light" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carrera=${CarreraTecnica.codigo_carrera}"><i class="fas fa-trash"></i></a>
+=======
+                                            <a style="background-color: #5e2129 " class="btn text-light" href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carreraa=${CarreraTecnica.codigo_carrera}"><i class="fas fa-trash"></i></a>
+>>>>>>> marck
                                         </td>
                                     </tr>
                                 </c:forEach>

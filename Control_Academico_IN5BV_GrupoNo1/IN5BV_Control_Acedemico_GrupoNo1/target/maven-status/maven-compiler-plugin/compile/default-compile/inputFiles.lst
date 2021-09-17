@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\LEGION\ESCRITORIO\5to. Kinal\Cuarto Bimestre\Informatica\Taller\Tareas\Proyecto\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\domain\Instructor.java
 D:\LEGION\ESCRITORIO\5to. Kinal\Cuarto Bimestre\Informatica\Taller\Tareas\Proyecto\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\db\Conexion.java
 D:\LEGION\ESCRITORIO\5to. Kinal\Cuarto Bimestre\Informatica\Taller\Tareas\Proyecto\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\domain\Salon.java
@@ -61,3 +62,35 @@ C:\Users\Dylan\Desktop\Control_Academico_IN5BV_GrupoNo1-master\IN5BV_Control_Ace
 C:\Users\Dylan\Desktop\Control_Academico_IN5BV_GrupoNo1-master\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\idao\ICarreraTecnicaDao.java
 C:\Users\Dylan\Desktop\Control_Academico_IN5BV_GrupoNo1-master\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\controller\ServletAsignaciondeEstudiantes.java
 >>>>>>> guideon2
+=======
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\dao\AsignaciondeAlumnoDaoImpl.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\controller\ServletAlumno.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\idao\ICursoDao.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\controller\ServletHorario.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\idao\IAsignacionAlumnoDao.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\controller\ServletCarreraTecnica.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\controller\ServletCurso.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\idao\IAlumnoDao.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\controller\ServletAsignaciondeAlumnos.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\dao\InstructorDaolmpl.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\dao\AlumnoDaoImpl.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\domain\Horario.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\domain\AsignacionAlumno.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\idao\ICarreraTecnicaDao.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\dao\HorarioDaoImpl.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\domain\CarreraTecnica.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\system\Principal.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\controller\ServletInstructor.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\idao\ISalonDao.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\db\Conexion.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\domain\Salon.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\idao\IInstructorDao.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\dao\CursoDaoImpl.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\domain\Instructor.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\idao\IHorarioDao.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\domain\Alumno.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\controller\ServletSalon.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\dao\SalonDaoImpl.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\dao\CarreraTecnicaDaoImpl.java
+C:\Users\Dylan\Desktop\P1\IN5BV_Control_Academico_GrupoNo1\Control_Academico_IN5BV_GrupoNo1\IN5BV_Control_Acedemico_GrupoNo1\src\main\java\com\grupono1\models\domain\Curso.java
+>>>>>>> marck

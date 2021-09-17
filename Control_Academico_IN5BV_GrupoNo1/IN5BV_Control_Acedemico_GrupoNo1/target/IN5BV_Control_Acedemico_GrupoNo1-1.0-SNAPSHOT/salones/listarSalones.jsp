@@ -36,7 +36,7 @@
             <div class="container" >
                 <div class="row-cols-1" style="background-color: #5E2129">
                     <div class="col-9">
-                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletEstudiante?accion=agregar&idEstudiante=${estudiante.idEstudiante}" ><i class="fas fa-user-plus"></i> Agregar Salon</i></a>
+                        <a  class="btn text-light" data-bs-toggle="modal" data-bs-target="#agregar-salon-modal" ><i class="fas fa-user-plus"></i> Agregar Salon</i></a>
                     </div>
                 </div>
             </div>
@@ -80,6 +80,45 @@
 
             </div>
 
+            <!-- Modal -->
+            <div  class="modal fade" id="agregar-salon-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div style="background-color: #5e2129" class="modal-content">
+                        <div class="modal-header text-light">
+                            <h5 class="modal-title " id="exampleModalLabel">Agregar Salon</h5>
+                            <button type="button" class="btn-close text-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form method="POST" action="${pageContext.request.contextPath}/ServletSalon">
+                            <div class="modal-body text-light">
+
+                                <div class="mb-3">
+                                    <label for="nombre_salon" class="form-label">Ingrese nombre del salon:  </label> 
+                                    <input type="text" id="nombre_salon" name="nombre_salon" class="form-control">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="descripcion" class="form-label">Ingrese una descripción:  </label> 
+                                    <input type="text" id="descripcion" name="descripcion" class="form-control">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="capacidad" class="form-label">Ingrese la capacidad:  </label> 
+                                    <input type="number" id="capacidad" name="capacidad" class="form-control">
+                                </div>
+
+                                <input type="hidden" name="accion" value="insertar">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-danger" >Guardar cambios</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            
         </section>
 
         <jsp:include page="/WEB-INF/Paginas/comunes/Pie-Pagina.jsp"/>

@@ -47,7 +47,11 @@ public class ServletCarreraTecnica extends HttpServlet {
 
     private void listarCarreraTecnica(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+<<<<<<< HEAD
         List<CarreraTecnica> listarCarreraTecnica = new CarreraTecnicaDaoImpl().listar();
+=======
+        List<CarreraTecnica> listarCarreraTecnica = new CarreraTecnicaDaoImpl().listarCarrera();
+>>>>>>> marck
 
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoCarreraTecnica", listarCarreraTecnica);

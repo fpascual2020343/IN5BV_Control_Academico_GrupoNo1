@@ -3,6 +3,7 @@
     Created on : 3/09/2021, 11:22:44 AM
     Author     : Usuario
 --%>
+<<<<<<< HEAD
 <%@page import="com.grupono1.models.dao.AsignaciondeAlumnoDaoImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -10,6 +11,11 @@
 <%@page import="java.util.List"%>
 <%@page import="com.grupono1.models.domain.Alumno"%>
 <%@page import="com.grupono1.models.domain.Curso"%>
+=======
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+>>>>>>> marck
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,6 +44,7 @@
             </div>
         </header>
 
+<<<<<<< HEAD
         <section id="acciones" class="py-4 mb-4">
             <div class="container">
                 <div class="row-cols-1" >
@@ -45,11 +52,19 @@
                         <a class="btn text-light" id="btn-agregar-asignacion"  data-bs-toggle="modal" data-bs-target="#agregar-asignacion-modal">
                             <i class="fas fa-user-plus"></i> Agregar Asignacion de Alumnos
                         </a>
+=======
+        <section  >
+            <div class="container" >
+                <div class="row-cols-1" style="background-color: #5E2129">
+                    <div class="col-9">
+                        <a  class="btn text-light" href="${pageContext.request.contextPath}/ServletAsignaciondeAlumnos?accion=agregar&asignacionAlumno=${asignacion_Alumno.asignacionAlumno}" ><i class="fas fa-user-plus"></i> Agregar Asignacion Alumno</i></a>
+>>>>>>> marck
                     </div>
                 </div>
             </div>
         </section>
 
+<<<<<<< HEAD
         <!-- Modal -->
         <div class="modal fade" id="agregar-asignacion-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -101,6 +116,8 @@
         </div>
 
 
+=======
+>>>>>>> marck
 
         <section id="Salon">
             <div class="container">
@@ -127,7 +144,11 @@
                                         <td>${asignacionAlumno.id_curso}</td>
                                         <td>${asignacionAlumno.fecha_asignacion}</td>
                                         <td>
+<<<<<<< HEAD
                                             <a style="background-color: #5e2129 " class="btn text-light " href="${pageContext.request.contextPath}/ServletAsignaciondeAlumnos?accion=editar&asignacion_id=${asignacionAlumno.asignacion_id}"><i class="far fa-edit"></i></a>
+=======
+                                            <a style="background-color: #5e2129 " class="btn text-light " href="${pageContext.request.contextPath}/ServletAsignaciondeAlumnos?accion=editar&asignacion_id=${asignacionAlumnoasignacion_id}"><i class="far fa-edit"></i></a>
+>>>>>>> marck
                                         </td>
                                         <td>
                                             <a style="background-color: #5e2129 " class="btn text-light" href="${pageContext.request.contextPath}/ServletAsignaciondeAlumnos?accion=eliminar&asignacion_id=${asignacionAlumno.asignacion_id}"><i class="fas fa-trash"></i></a>
