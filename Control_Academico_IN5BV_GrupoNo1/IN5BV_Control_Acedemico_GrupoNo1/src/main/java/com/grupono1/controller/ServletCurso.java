@@ -59,7 +59,7 @@ public class ServletCurso extends HttpServlet{
         
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoCurso", listaCurso);
-        response.sendRedirect("listarCursos.jsp");
+        response.sendRedirect("cursos/listarCursos.jsp");
     }
     
     
