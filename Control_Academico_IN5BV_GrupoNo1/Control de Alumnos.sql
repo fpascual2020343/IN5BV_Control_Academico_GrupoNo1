@@ -54,13 +54,21 @@ CREATE TABLE Curso(
     id_instructor INT,
     PRIMARY KEY PK_Curso(curso_id),
     CONSTRAINT FK_Curso_Horario 
-		FOREIGN KEY (id_horario) REFERENCES Horario (horario_id),
+		FOREIGN KEY (id_horario) REFERENCES Horario (horario_id)
+		ON DELETE CASCADE
+        ON UPDATE CASCADE,
 	CONSTRAINT FK_Curso_Salon 
-		FOREIGN KEY (id_salon) REFERENCES Salon (salon_id),
+		FOREIGN KEY (id_salon) REFERENCES Salon (salon_id)
+		ON DELETE CASCADE
+        ON UPDATE CASCADE,
     CONSTRAINT FK_Curso_Carrera_Tecnica 
-		FOREIGN KEY (id_codigo_carrera) REFERENCES Carrera_Tecnica(codigo_carrera),
+		FOREIGN KEY (id_codigo_carrera) REFERENCES Carrera_Tecnica(codigo_carrera)
+		ON DELETE CASCADE
+        ON UPDATE CASCADE,
     CONSTRAINT FK_Curso_Instructor 
 		FOREIGN KEY (id_instructor) REFERENCES Instructor (instructor_id)
+		ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 DROP TABLE IF EXISTS Asignacion_Alumno;
 CREATE TABLE Asignacion_Alumno(
@@ -70,11 +78,16 @@ CREATE TABLE Asignacion_Alumno(
     fecha_asignacion DATETIME NOT NULL,
     PRIMARY KEY PK_Asignacion_Alummno(asignacion_id),
     CONSTRAINT FK_Carrera_Tecnica_Alumno 
-		FOREIGN KEY (carne_alumno) REFERENCES Alumno (carne),
+		FOREIGN KEY (carne_alumno) REFERENCES Alumno (carne)
+		ON DELETE CASCADE
+        ON UPDATE CASCADE,
 	CONSTRAINT FK_carne_alummno_Curso
 		FOREIGN KEY (id_curso) REFERENCES Curso (curso_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
+/*---------------------- Registros ------------------------*/
 
 INSERT INTO Salon (capacidad, descripcion, nombre_salon) 
 VALUES(45, "Salon de Matematicas", "C25");
@@ -157,3 +170,5 @@ VALUES(1, 35, 10, "Matematica Avanzada",1,1,"A3",1);
 
 
 INSERT INTO Asignacion_Alumno(asignacion_id, carne_alumno, id_curso, fecha_asignacion) VALUE("B5C0E","2020-343", 1, "2021-03-03 15:20:15");
+
+SELECT * FROM Curso;
