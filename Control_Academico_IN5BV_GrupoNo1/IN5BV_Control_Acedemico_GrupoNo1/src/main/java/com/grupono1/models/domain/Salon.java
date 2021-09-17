@@ -41,7 +41,8 @@ public class Salon {
     public Salon(int salon_id) {
         this.salon_id = salon_id;
     }
-    
+
+ 
     
 
     public int getSalon_id() {

@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.ServletException;
 import java.util.List;
 import com.grupono1.models.dao.AlumnoDaoImpl;
 import com.grupono1.models.domain.Alumno;
@@ -49,12 +48,13 @@ public class ServletAlumno extends HttpServlet{
     }
     
     private void eliminarAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        String carne = String.valueOf(request.getParameter("carne"));
+        String carne = request.getParameter("carne");
 
         Alumno alumno= new Alumno(carne);
         
 
         int registrosEliminados=new AlumnoDaoImpl().eliminar(alumno);
+        System.out.println("Cantidad de registros eliminados: "+ registrosEliminados);
         
         listarAlumno(request,response);
         

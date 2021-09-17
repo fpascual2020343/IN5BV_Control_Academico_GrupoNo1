@@ -27,12 +27,15 @@ public class SalonDaoImpl implements ISalonDao {
 
     private static final String SQL_SELECT = "SELECT salon_id, capacidad, descripcion, nombre_salon FROM Salon";
     private static final String SQL_DELETE = "DELETE FROM Salon WHERE salon_id = ?";
+    private static final String SQL_INSERT = "INSERT INTO Salon (nombre_salon, descripcion, capacidad) VALUES (?, ?, ?)";
+    private static final String SQL_SELECT_BY_ID = "SELECT salon_id, nombre_salon, descripcion, capacidad FROM Salon WHERE salon_id = ?";
+    private static final String SQL_UPDATE = "UPDATE Salon Set nombre_salon = ?,  descripcion = ?, capacidad = ? WHERE salon_id = ?";
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
     Salon salon = null;
     List<Salon> listaSalon = new ArrayList<>();
-    
+
     @Override
     public List<Salon> listar() {
 
@@ -63,17 +66,82 @@ public class SalonDaoImpl implements ISalonDao {
 
     @Override
     public Salon encontrar(Salon salon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_SELECT_BY_ID);
+            pstmt.setInt(1, salon.getSalon_id());
+            System.out.println(pstmt.toString());
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                int capacidad = rs.getInt("capacidad");
+                String descripcion = rs.getString("descripcion");
+                String nombre_salon = rs.getString("nombre_salon");
+
+                salon.setCapacidad(capacidad);
+                salon.setNombre_salon(nombre_salon);
+                salon.setDescripcion(descripcion);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return salon;
     }
 
     @Override
     public int insertar(Salon salon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rows = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_INSERT);
+            pstmt.setString(2, salon.getNombre_salon());
+            pstmt.setString(1, salon.getDescripcion());
+            pstmt.setInt(3, salon.getCapacidad());
+
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return rows;
     }
 
     @Override
     public int actualizar(Salon salon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rows = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_UPDATE);
+            pstmt.setString(2, salon.getNombre_salon());
+            pstmt.setString(1, salon.getDescripcion());
+            pstmt.setInt(3, salon.getCapacidad());
+            pstmt.setInt(4, salon.getSalon_id());
+
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return rows;
     }
 
     @Override
@@ -87,7 +155,7 @@ public class SalonDaoImpl implements ISalonDao {
             rows = pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace(System.out);
-        }finally{
+        } finally {
             Conexion.close(pstmt);
             Conexion.close(conn);
         }
