@@ -15,17 +15,13 @@ public class Usuario {
 
     private String user;
     private String pass;
-    private String nombre;
-    private int rol;
 
     public Usuario() {
     }
 
-    public Usuario(String user, String pass, String nombre, int rol) {
+    public Usuario(String user, String pass) {
         this.user = user;
         this.pass = pass;
-        this.nombre = nombre;
-        this.rol = rol;
     }
 
     public String getUser() {
@@ -42,22 +38,6 @@ public class Usuario {
 
     public void setPass(String pass) {
         this.pass = pass;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getRol() {
-        return rol;
-    }
-
-    public void setRol(int rol) {
-        this.rol = rol;
     }
 
 }
